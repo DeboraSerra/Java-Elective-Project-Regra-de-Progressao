@@ -213,6 +213,13 @@ mvn test -Dtest="TestClassName"
 
 </details>
 
+## Dicas para mandar bem!
+
+> 1. Evite o uso de atributos e métodos estáticos em sua implementação, esses poderão impactar diretamente a saída dos testes já que os valores serão armazenados na classe e não em seus objetos;
+> 2. Evite utilizar múltiplas instâncias da classe Scanner, pois poderão conflitar uma com a outra;
+> 3. Utilize, sempre que possível, o método nextLine() associado à classe Scanner e realize a conversão do tipo de dado da entrada (String) para o tipo de dado da variável onde a entrada será armazenada (int, float, etc.);
+> 4. Evite utilizar os métodos `next()`, `nextInt()`, `nextDouble()`, entre outros. Pois esses métodos, sozinhos, não conseguem representar o fluxo de operação em um terminal, não consumindo novas linhas quando simulamos a utilização da tecla `Enter` durante a execução dos testes.
+
 ## Requisitos do projeto
 
 ### 1 - Cadastrar atividades avaliativas
