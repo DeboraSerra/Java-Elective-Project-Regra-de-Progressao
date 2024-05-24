@@ -10,17 +10,6 @@ import java.util.Scanner;
 public class App {
 
   /**
-   * @param arg
-   * @return int
-   */
-  public static int getWeightsSum(int[] arg) {
-    int sum = 0;
-    for (int weight :  arg) {
-      sum += weight;
-    }
-    return sum;
-  }
-  /**
    * Metodo main.
    */
   public static void main(String[] args) {
@@ -38,7 +27,11 @@ public class App {
       System.out.println("Digite a nota obtida para " + names[n] + ":");
       grades[n] = Integer.parseInt(scanner.nextLine());
     }
-    if (getWeightsSum(gradeWheights) != 100) {
+    int weightsSum = 0;
+    for (int weight :  gradeWheights) {
+      weightsSum += weight;
+    }
+    if (weightsSum != 100) {
       System.out.println("A soma dos pesos é diferente de 100!");
       return;
     }
@@ -47,7 +40,7 @@ public class App {
       gradesSum += (grades[n] * gradeWheights[n]);
     }
     double result = gradesSum / 100;
-    String formatedGrade = String.format((Locale)null, "%.1f",result);
+    String formatedGrade = String.format((Locale) null, "%.1f", result);
     if (result >= 85) {
       String successPrefix = "Parabéns! Você alcançou ";
       String successSuffix = "%! E temos o prazer de informar que você obteve aprovação!";
@@ -57,7 +50,7 @@ public class App {
       String failPrefixPart2 = "com base na sua pontuação alcançada neste período, ";
       String failPrefix = failPrefixPart1 + failPrefixPart2;
       String failSuffix = "%, você não atingiu a pontuação mínima necessária para sua aprovação.";
-      System.out.println(failPrefix + formatedGrade+ failSuffix);
+      System.out.println(failPrefix + formatedGrade + failSuffix);
     }
     scanner.close();
   }
