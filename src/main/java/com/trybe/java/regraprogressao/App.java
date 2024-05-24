@@ -1,5 +1,6 @@
 package com.trybe.java.regraprogressao;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -24,6 +25,9 @@ public class App {
       gradeWheights[n] =Integer.parseInt(scanner.nextLine()) ;
       System.out.println("Digite a nota obtida para " + names[n] + ":");
       grades[n] = Integer.parseInt(scanner.nextLine());
+    }
+    if (Arrays.stream(gradeWheights).count() != 100) {
+      System.out.println("A soma dos pesos é diferente de 100!");
     }
     scanner.close();
     System.out.println(gradeWheights);
